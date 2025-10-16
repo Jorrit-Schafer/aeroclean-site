@@ -77,17 +77,46 @@ img { max-width: 100%; display: block; }
 /* About */
 .narrow { max-width: 820px; margin: 0 auto; }
 
-/* Contact (modern card) */
+/* Contact – modern card + pill button with lighter text */
 .contact-section { background: linear-gradient(180deg, #F9FBFD 0%, #FFFFFF 100%); padding: 80px 0; text-align: center; }
-.contact-card { background: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(10, 49, 73, 0.08);
-  max-width: 760px; margin: 0 auto; padding: 50px 40px; }
+.contact-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(10, 49, 73, 0.08);
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 50px 40px;
+}
 .contact-icon { color: var(--primary-color); margin-bottom: 12px; }
 .contact-title { font-family: var(--heading-font); font-size: clamp(22px, 4vw, 30px); color: var(--dark-color); margin: 0 0 10px; }
 .contact-text { color: var(--text-color); opacity: 0.9; margin: 0 auto 24px; max-width: 600px; }
-.contact-btn { display: inline-block; background: var(--primary-color); color: #fff; border-radius: 12px; padding: 14px 24px;
-  font-weight: 500; text-decoration: none; transition: background 0.25s ease, transform 0.2s ease; }
-.contact-btn span { font-weight: 600; }
-.contact-btn:hover { background: #009de0; transform: translateY(-1px); }
+
+/* Ensure the email renders as a pill button (not a plain link) with lighter weight text */
+.contact-card .contact-btn,
+.contact-card .contact-btn:link,
+.contact-card .contact-btn:visited {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 12px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-weight: 500;          /* lighter (not heavy/bold) */
+  line-height: 1.2;
+  box-shadow: 0 4px 12px rgba(0, 142, 207, 0.25);
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.contact-card .contact-btn:hover { background: #009de0; transform: translateY(-1px); }
+.contact-card .contact-btn:active { transform: translateY(0); }
+
+.contact-card .btn-label {
+  opacity: 0.9;
+  margin-right: 6px;
+  font-weight: 500;          /* keep label light too */
+}
+
 .contact-note { font-size: 0.95rem; color: #5a7380; margin-top: 16px; }
 
 /* Footer */
